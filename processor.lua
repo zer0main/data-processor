@@ -4,6 +4,8 @@
 --
 -- See the LICENSE file for terms of use.
 
+-- Calculate the distance using special formula.
+-- cof argument is the coefficient of friction.
 local function calculateDistance(height, angle,
                                  cof)
     local exponent = math.exp(-2 * angle * cof)
