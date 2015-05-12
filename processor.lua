@@ -14,3 +14,19 @@ local function calculateDistance(height, angle,
         (1 / cof - cotangent)
     return distance
 end
+
+local out = io.open('results.txt', 'w')
+
+for line in io.stdin:lines() do
+    local height, sin, cof =
+        line:match('([%d.]+)%s([%d.]+)%s([%d.]+)')
+    if (height == nil) then break end
+    height = tonumber(height)
+    sin = tonumber(sin)
+    cof = tonumber(cof)
+    local angle = math.asin(sin)
+    local distance = calculateDistance(height, angle, cof)
+    out:write(distance, "\n")
+end
+
+out:close()
