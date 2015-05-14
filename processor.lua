@@ -26,7 +26,7 @@ for line in io.stdin:lines() do
     cof = tonumber(cof)
     local angle = math.asin(sin)
     local distance = calculateDistance(height, angle, cof)
-    out:write(distance, "\n")
+    out:write(tostring(distance), "\n")
 end
 
 out:close()
