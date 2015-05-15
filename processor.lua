@@ -6,8 +6,7 @@
 
 -- Calculate the distance using special formula.
 -- cof argument is the coefficient of friction.
-local function calculateDistance(height, angle,
-                                 cof)
+local function calculateDistance(height, angle, cof)
     local exponent = math.exp(-2 * angle * cof)
     local cotangent = 1 / math.tan(angle)
     local distance = height * exponent *
