@@ -14,6 +14,12 @@ local function calculateDistance(height, angle, cof)
     return distance
 end
 
+local function calculateDistanceWrongly(height, angle, cof)
+    local cotangent = 1 / math.tan(angle)
+    local distance = height * (1 / cof - cotangent)
+    return distance
+end
+
 local out = io.open('results.txt', 'w')
 
 for line in io.stdin:lines() do
