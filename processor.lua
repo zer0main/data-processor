@@ -26,6 +26,7 @@ local function calculateDistanceWrongly(height, angle, cof)
 end
 
 local out = io.open('results.txt', 'w')
+local wrong_out = io.open('wrong_results.txt', 'w')
 
 for line in io.stdin:lines() do
     local height, sin, cof =
@@ -36,7 +37,11 @@ for line in io.stdin:lines() do
     cof = tonumber(cof)
     local angle = math.asin(sin)
     local distance = calculateDistance(height, angle, cof)
+    local wrong_dist = calculateDistanceWrongly(height,
+                                                angle, cof)
     out:write(tostring(distance), "\n")
+    wrong_out:write(tostring(wrong_dist), "\n")
 end
 
 out:close()
+wrong_out:close()
