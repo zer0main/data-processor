@@ -14,6 +14,11 @@ local function calculateDistance(height, angle, cof)
     return distance
 end
 
+-- Calculate the distance using wrong formula.
+-- (It's necessary to compare the experimental results with
+-- results calculated by the wrong formula and results
+-- calculated by the correct formula.)
+-- cof argument is the coefficient of friction.
 local function calculateDistanceWrongly(height, angle, cof)
     local cotangent = 1 / math.tan(angle)
     local distance = height * (1 / cof - cotangent)
